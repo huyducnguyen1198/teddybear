@@ -7,7 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initially, don't show the centered text and teddy images
     centeredText.style.display = 'none';
     teddyContainer.style.display = 'none';
-  
+    
+    // Function to create snowflakes
+    const createSnowflakes = () => {
+        const snowflakeContainer = document.getElementById('snowflake-container');
+        for (let i = 0; i < 200; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+            snowflake.style.animationDuration = Math.random() * 5 + 3 + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflakeContainer.appendChild(snowflake);
+        }
+    };
+        
+    createSnowflakes();
+
     const showRandomTeddy = () => {
       const teddyNumber = Math.floor(Math.random() * 4) + 1;
       const imageWidth = window.innerWidth * 0.2;
@@ -24,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       teddyContainer.appendChild(image);
     };
   
+
+
     clickPrompt.addEventListener('click', () => {
       // Hide the "Click me" text
       clickPrompt.style.display = 'none';
