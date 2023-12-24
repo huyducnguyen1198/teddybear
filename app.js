@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       // Show the centered text
       centeredText.style.display = 'block';
-  
+      audio.loop = true;
       // Play the audio for 1 second
       audio.play();
       setTimeout(() => {
